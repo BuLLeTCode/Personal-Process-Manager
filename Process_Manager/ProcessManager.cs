@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Forms;
+using Process_Manager.Properties;
 using Timer = System.Windows.Forms.Timer;
 
 
@@ -10,7 +10,8 @@ namespace Process_Manager
 {
     public partial class ProcessManager : Form
     {
-        readonly PerformanceCounter _theMemAvaibleCounter = new PerformanceCounter("Memory", "Available MBytes");
+        private readonly PerformanceCounter _theMemAvaibleCounter = new PerformanceCounter("Memory", "Available MBytes");
+        //private readonly PerformanceCounter _theProcessThreadCounter = new PerformanceCounter("Process", "Thread Count");
 
         public ProcessManager()
         {
@@ -41,14 +42,14 @@ namespace Process_Manager
         {
             Process [] processes = Process.GetProcesses();
 
-            List<string> processNames = new List<string>();
-
             foreach (var proc in processes)
             {
-                Console.WriteLine("proc name: " + proc.ProcessName);
-                //processsNameList.Add(proc.ProcessName);
+                PerformanceCounter theCPUCounter = new PerformanceCounter("Process", "% Processor Time",
+                proc.ProcessName);
 
-                dgvProcesses.Rows.Add(proc.ProcessName, proc.MainWindowTitle);
+                //Console.WriteLine(Resources.ProcessManager_DisplayProcesses_proc_name__ + proc.ProcessName);
+                //processsNameList.Add(proc.ProcessName);
+                dgvProcesses.Rows.Add(proc.ProcessName, proc.MainWindowTitle, theCPUCounter.NextValue());
 
             }
         }
@@ -56,6 +57,26 @@ namespace Process_Manager
         static ulong GetTotalMemoryInBytes()
         {
             return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+        }
+
+        private void btnViewInExcel_Click(object sender, EventArgs e)
+        {
+            Type excelType = Type.GetTypeFromProgID("Excel.Application");
+            dynamic excel = Activator.CreateInstance(excelType);
+            excel.Visible = true;
+
+            excel.Workbooks.Add();
+
+            dynamic sheet = excel.ActiveSheet;
+
+            sheet.Columns("A:B").ColumnWidth = 30;
+
+            for (int i = 0; i < dgvProcesses.Rows.Count; i++)
+            {
+                
+                sheet.Cells[i + 1, "A"] = dgvProcesses.Rows[i].Cells[0].Value;
+                sheet.Cells[i + 1, "B"] = dgvProcesses.Rows[i].Cells[1].Value;
+            }
         }
     }
 }
