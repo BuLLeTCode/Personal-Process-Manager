@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label lblWriteSpeedDisk;
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProcesses = new System.Windows.Forms.DataGridView();
             this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +49,19 @@
             this.lblThreadsCPU = new System.Windows.Forms.Label();
             this.tbLoadCPU = new System.Windows.Forms.TextBox();
             this.lblLoadCPU = new System.Windows.Forms.Label();
+            this.gbHardDisk = new System.Windows.Forms.GroupBox();
+            this.tbDiskBusy = new System.Windows.Forms.TextBox();
+            this.lblDiskBusy = new System.Windows.Forms.Label();
+            this.tbSystemRequestDisk = new System.Windows.Forms.TextBox();
+            this.lblSystemRequestDisk = new System.Windows.Forms.Label();
+            this.tbWriteSpeedDisk = new System.Windows.Forms.TextBox();
+            this.tbReadSpeedDisk = new System.Windows.Forms.TextBox();
+            this.lblReadSpeedDisk = new System.Windows.Forms.Label();
+            lblWriteSpeedDisk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesses)).BeginInit();
             this.gbRAM.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbHardDisk.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -252,11 +263,107 @@
             this.lblLoadCPU.TabIndex = 6;
             this.lblLoadCPU.Text = "Noslogojums (%):";
             // 
+            // gbHardDisk
+            // 
+            this.gbHardDisk.Controls.Add(this.tbReadSpeedDisk);
+            this.gbHardDisk.Controls.Add(this.lblReadSpeedDisk);
+            this.gbHardDisk.Controls.Add(this.tbWriteSpeedDisk);
+            this.gbHardDisk.Controls.Add(lblWriteSpeedDisk);
+            this.gbHardDisk.Controls.Add(this.tbSystemRequestDisk);
+            this.gbHardDisk.Controls.Add(this.lblSystemRequestDisk);
+            this.gbHardDisk.Controls.Add(this.tbDiskBusy);
+            this.gbHardDisk.Controls.Add(this.lblDiskBusy);
+            this.gbHardDisk.Location = new System.Drawing.Point(443, 47);
+            this.gbHardDisk.Margin = new System.Windows.Forms.Padding(2);
+            this.gbHardDisk.Name = "gbHardDisk";
+            this.gbHardDisk.Padding = new System.Windows.Forms.Padding(2);
+            this.gbHardDisk.Size = new System.Drawing.Size(202, 117);
+            this.gbHardDisk.TabIndex = 6;
+            this.gbHardDisk.TabStop = false;
+            this.gbHardDisk.Text = "Cietais disks:";
+            // 
+            // tbDiskBusy
+            // 
+            this.tbDiskBusy.Location = new System.Drawing.Point(116, 12);
+            this.tbDiskBusy.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDiskBusy.Name = "tbDiskBusy";
+            this.tbDiskBusy.ReadOnly = true;
+            this.tbDiskBusy.Size = new System.Drawing.Size(76, 20);
+            this.tbDiskBusy.TabIndex = 1;
+            // 
+            // lblDiskBusy
+            // 
+            this.lblDiskBusy.AutoSize = true;
+            this.lblDiskBusy.Location = new System.Drawing.Point(2, 15);
+            this.lblDiskBusy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDiskBusy.Name = "lblDiskBusy";
+            this.lblDiskBusy.Size = new System.Drawing.Size(94, 13);
+            this.lblDiskBusy.TabIndex = 0;
+            this.lblDiskBusy.Text = "Disks nodarbināts:";
+            // 
+            // tbSystemRequestDisk
+            // 
+            this.tbSystemRequestDisk.Location = new System.Drawing.Point(116, 37);
+            this.tbSystemRequestDisk.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSystemRequestDisk.Name = "tbSystemRequestDisk";
+            this.tbSystemRequestDisk.ReadOnly = true;
+            this.tbSystemRequestDisk.Size = new System.Drawing.Size(76, 20);
+            this.tbSystemRequestDisk.TabIndex = 3;
+            // 
+            // lblSystemRequestDisk
+            // 
+            this.lblSystemRequestDisk.AutoSize = true;
+            this.lblSystemRequestDisk.Location = new System.Drawing.Point(2, 38);
+            this.lblSystemRequestDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSystemRequestDisk.Name = "lblSystemRequestDisk";
+            this.lblSystemRequestDisk.Size = new System.Drawing.Size(110, 13);
+            this.lblSystemRequestDisk.TabIndex = 2;
+            this.lblSystemRequestDisk.Text = "Sistēmas pieprasījumi:";
+            // 
+            // tbWriteSpeedDisk
+            // 
+            this.tbWriteSpeedDisk.Location = new System.Drawing.Point(116, 62);
+            this.tbWriteSpeedDisk.Margin = new System.Windows.Forms.Padding(2);
+            this.tbWriteSpeedDisk.Name = "tbWriteSpeedDisk";
+            this.tbWriteSpeedDisk.ReadOnly = true;
+            this.tbWriteSpeedDisk.Size = new System.Drawing.Size(76, 20);
+            this.tbWriteSpeedDisk.TabIndex = 5;
+            // 
+            // lblWriteSpeedDisk
+            // 
+            lblWriteSpeedDisk.AutoSize = true;
+            lblWriteSpeedDisk.Location = new System.Drawing.Point(2, 65);
+            lblWriteSpeedDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblWriteSpeedDisk.Name = "lblWriteSpeedDisk";
+            lblWriteSpeedDisk.Size = new System.Drawing.Size(106, 13);
+            lblWriteSpeedDisk.TabIndex = 4;
+            lblWriteSpeedDisk.Text = "Rakstīšanas ātrums: ";
+            // 
+            // tbReadSpeedDisk
+            // 
+            this.tbReadSpeedDisk.Location = new System.Drawing.Point(116, 86);
+            this.tbReadSpeedDisk.Margin = new System.Windows.Forms.Padding(2);
+            this.tbReadSpeedDisk.Name = "tbReadSpeedDisk";
+            this.tbReadSpeedDisk.ReadOnly = true;
+            this.tbReadSpeedDisk.Size = new System.Drawing.Size(76, 20);
+            this.tbReadSpeedDisk.TabIndex = 7;
+            // 
+            // lblReadSpeedDisk
+            // 
+            this.lblReadSpeedDisk.AutoSize = true;
+            this.lblReadSpeedDisk.Location = new System.Drawing.Point(2, 89);
+            this.lblReadSpeedDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReadSpeedDisk.Name = "lblReadSpeedDisk";
+            this.lblReadSpeedDisk.Size = new System.Drawing.Size(92, 13);
+            this.lblReadSpeedDisk.TabIndex = 6;
+            this.lblReadSpeedDisk.Text = "Lasīšanas ātrums:";
+            // 
             // ProcessManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 546);
+            this.ClientSize = new System.Drawing.Size(847, 546);
+            this.Controls.Add(this.gbHardDisk);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnViewInExcel);
             this.Controls.Add(this.gbRAM);
@@ -270,6 +377,8 @@
             this.gbRAM.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbHardDisk.ResumeLayout(false);
+            this.gbHardDisk.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,6 +406,14 @@
         private System.Windows.Forms.Label lblThreadsCPU;
         private System.Windows.Forms.TextBox tbThreadSwitch;
         private System.Windows.Forms.Label lblThreadsSwitch;
+        private System.Windows.Forms.TextBox tbDiskBusy;
+        private System.Windows.Forms.Label lblDiskBusy;
+        private System.Windows.Forms.GroupBox gbHardDisk;
+        private System.Windows.Forms.TextBox tbSystemRequestDisk;
+        private System.Windows.Forms.Label lblSystemRequestDisk;
+        private System.Windows.Forms.TextBox tbReadSpeedDisk;
+        private System.Windows.Forms.Label lblReadSpeedDisk;
+        private System.Windows.Forms.TextBox tbWriteSpeedDisk;
     }
 }
 
