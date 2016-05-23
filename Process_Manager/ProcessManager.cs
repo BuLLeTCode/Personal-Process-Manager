@@ -136,7 +136,7 @@ namespace Process_Manager
 
                 //Console.WriteLine(Resources.ProcessManager_DisplayProcesses_proc_name__ + proc.ProcessName);
                 //processsNameList.Add(proc.ProcessName);
-                dgvProcesses.Rows.Add(proc.ProcessName, proc.MainWindowTitle, theCPUCounter.NextValue());
+                dgvProcesses.Rows.Add(proc.ProcessName, proc.MainWindowTitle);
 
             }
         }
@@ -173,6 +173,11 @@ namespace Process_Manager
             target.BackColor = Color.FromKnownColor(KnownColor.Control);
             target.ForeColor = targetColor;
             target.ReadOnly = true;
+        }
+
+        private void btnExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

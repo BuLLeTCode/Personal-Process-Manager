@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label lblWriteSpeedDisk;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcessManager));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProcesses = new System.Windows.Forms.DataGridView();
-            this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnWindowsTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_CPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbRAM = new System.Windows.Forms.GroupBox();
             this.tbTotalRAM = new System.Windows.Forms.TextBox();
             this.lblTotalRAM = new System.Windows.Forms.Label();
@@ -50,19 +48,34 @@
             this.tbLoadCPU = new System.Windows.Forms.TextBox();
             this.lblLoadCPU = new System.Windows.Forms.Label();
             this.gbHardDisk = new System.Windows.Forms.GroupBox();
-            this.tbDiskBusy = new System.Windows.Forms.TextBox();
-            this.lblDiskBusy = new System.Windows.Forms.Label();
-            this.tbSystemRequestDisk = new System.Windows.Forms.TextBox();
-            this.lblSystemRequestDisk = new System.Windows.Forms.Label();
-            this.tbWriteSpeedDisk = new System.Windows.Forms.TextBox();
             this.tbReadSpeedDisk = new System.Windows.Forms.TextBox();
             this.lblReadSpeedDisk = new System.Windows.Forms.Label();
+            this.tbWriteSpeedDisk = new System.Windows.Forms.TextBox();
+            this.tbSystemRequestDisk = new System.Windows.Forms.TextBox();
+            this.lblSystemRequestDisk = new System.Windows.Forms.Label();
+            this.tbDiskBusy = new System.Windows.Forms.TextBox();
+            this.lblDiskBusy = new System.Windows.Forms.Label();
+            this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnWindowsTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExitButton = new System.Windows.Forms.Button();
+            this.tbInfo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             lblWriteSpeedDisk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesses)).BeginInit();
             this.gbRAM.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbHardDisk.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblWriteSpeedDisk
+            // 
+            lblWriteSpeedDisk.AutoSize = true;
+            lblWriteSpeedDisk.Location = new System.Drawing.Point(2, 65);
+            lblWriteSpeedDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblWriteSpeedDisk.Name = "lblWriteSpeedDisk";
+            lblWriteSpeedDisk.Size = new System.Drawing.Size(106, 13);
+            lblWriteSpeedDisk.TabIndex = 4;
+            lblWriteSpeedDisk.Text = "Rakstīšanas ātrums: ";
             // 
             // label1
             // 
@@ -80,29 +93,13 @@
             this.dgvProcesses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProcesses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnName,
-            this.columnWindowsTitle,
-            this.column_CPU});
+            this.columnWindowsTitle});
             this.dgvProcesses.Location = new System.Drawing.Point(9, 205);
             this.dgvProcesses.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProcesses.Name = "dgvProcesses";
             this.dgvProcesses.RowTemplate.Height = 24;
             this.dgvProcesses.Size = new System.Drawing.Size(538, 288);
             this.dgvProcesses.TabIndex = 1;
-            // 
-            // columnName
-            // 
-            this.columnName.HeaderText = "Nosaukums";
-            this.columnName.Name = "columnName";
-            // 
-            // columnWindowsTitle
-            // 
-            this.columnWindowsTitle.HeaderText = "Windows virsraksts";
-            this.columnWindowsTitle.Name = "columnWindowsTitle";
-            // 
-            // column_CPU
-            // 
-            this.column_CPU.HeaderText = "CPU";
-            this.column_CPU.Name = "column_CPU";
             // 
             // gbRAM
             // 
@@ -282,24 +279,33 @@
             this.gbHardDisk.TabStop = false;
             this.gbHardDisk.Text = "Cietais disks:";
             // 
-            // tbDiskBusy
+            // tbReadSpeedDisk
             // 
-            this.tbDiskBusy.Location = new System.Drawing.Point(116, 12);
-            this.tbDiskBusy.Margin = new System.Windows.Forms.Padding(2);
-            this.tbDiskBusy.Name = "tbDiskBusy";
-            this.tbDiskBusy.ReadOnly = true;
-            this.tbDiskBusy.Size = new System.Drawing.Size(76, 20);
-            this.tbDiskBusy.TabIndex = 1;
+            this.tbReadSpeedDisk.Location = new System.Drawing.Point(116, 86);
+            this.tbReadSpeedDisk.Margin = new System.Windows.Forms.Padding(2);
+            this.tbReadSpeedDisk.Name = "tbReadSpeedDisk";
+            this.tbReadSpeedDisk.ReadOnly = true;
+            this.tbReadSpeedDisk.Size = new System.Drawing.Size(76, 20);
+            this.tbReadSpeedDisk.TabIndex = 7;
             // 
-            // lblDiskBusy
+            // lblReadSpeedDisk
             // 
-            this.lblDiskBusy.AutoSize = true;
-            this.lblDiskBusy.Location = new System.Drawing.Point(2, 15);
-            this.lblDiskBusy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDiskBusy.Name = "lblDiskBusy";
-            this.lblDiskBusy.Size = new System.Drawing.Size(94, 13);
-            this.lblDiskBusy.TabIndex = 0;
-            this.lblDiskBusy.Text = "Disks nodarbināts:";
+            this.lblReadSpeedDisk.AutoSize = true;
+            this.lblReadSpeedDisk.Location = new System.Drawing.Point(2, 89);
+            this.lblReadSpeedDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReadSpeedDisk.Name = "lblReadSpeedDisk";
+            this.lblReadSpeedDisk.Size = new System.Drawing.Size(92, 13);
+            this.lblReadSpeedDisk.TabIndex = 6;
+            this.lblReadSpeedDisk.Text = "Lasīšanas ātrums:";
+            // 
+            // tbWriteSpeedDisk
+            // 
+            this.tbWriteSpeedDisk.Location = new System.Drawing.Point(116, 62);
+            this.tbWriteSpeedDisk.Margin = new System.Windows.Forms.Padding(2);
+            this.tbWriteSpeedDisk.Name = "tbWriteSpeedDisk";
+            this.tbWriteSpeedDisk.ReadOnly = true;
+            this.tbWriteSpeedDisk.Size = new System.Drawing.Size(76, 20);
+            this.tbWriteSpeedDisk.TabIndex = 5;
             // 
             // tbSystemRequestDisk
             // 
@@ -320,56 +326,84 @@
             this.lblSystemRequestDisk.TabIndex = 2;
             this.lblSystemRequestDisk.Text = "Sistēmas pieprasījumi:";
             // 
-            // tbWriteSpeedDisk
+            // tbDiskBusy
             // 
-            this.tbWriteSpeedDisk.Location = new System.Drawing.Point(116, 62);
-            this.tbWriteSpeedDisk.Margin = new System.Windows.Forms.Padding(2);
-            this.tbWriteSpeedDisk.Name = "tbWriteSpeedDisk";
-            this.tbWriteSpeedDisk.ReadOnly = true;
-            this.tbWriteSpeedDisk.Size = new System.Drawing.Size(76, 20);
-            this.tbWriteSpeedDisk.TabIndex = 5;
+            this.tbDiskBusy.Location = new System.Drawing.Point(116, 12);
+            this.tbDiskBusy.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDiskBusy.Name = "tbDiskBusy";
+            this.tbDiskBusy.ReadOnly = true;
+            this.tbDiskBusy.Size = new System.Drawing.Size(76, 20);
+            this.tbDiskBusy.TabIndex = 1;
             // 
-            // lblWriteSpeedDisk
+            // lblDiskBusy
             // 
-            lblWriteSpeedDisk.AutoSize = true;
-            lblWriteSpeedDisk.Location = new System.Drawing.Point(2, 65);
-            lblWriteSpeedDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblWriteSpeedDisk.Name = "lblWriteSpeedDisk";
-            lblWriteSpeedDisk.Size = new System.Drawing.Size(106, 13);
-            lblWriteSpeedDisk.TabIndex = 4;
-            lblWriteSpeedDisk.Text = "Rakstīšanas ātrums: ";
+            this.lblDiskBusy.AutoSize = true;
+            this.lblDiskBusy.Location = new System.Drawing.Point(2, 15);
+            this.lblDiskBusy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDiskBusy.Name = "lblDiskBusy";
+            this.lblDiskBusy.Size = new System.Drawing.Size(94, 13);
+            this.lblDiskBusy.TabIndex = 0;
+            this.lblDiskBusy.Text = "Disks nodarbināts:";
             // 
-            // tbReadSpeedDisk
+            // columnName
             // 
-            this.tbReadSpeedDisk.Location = new System.Drawing.Point(116, 86);
-            this.tbReadSpeedDisk.Margin = new System.Windows.Forms.Padding(2);
-            this.tbReadSpeedDisk.Name = "tbReadSpeedDisk";
-            this.tbReadSpeedDisk.ReadOnly = true;
-            this.tbReadSpeedDisk.Size = new System.Drawing.Size(76, 20);
-            this.tbReadSpeedDisk.TabIndex = 7;
+            this.columnName.HeaderText = "Nosaukums";
+            this.columnName.Name = "columnName";
             // 
-            // lblReadSpeedDisk
+            // columnWindowsTitle
             // 
-            this.lblReadSpeedDisk.AutoSize = true;
-            this.lblReadSpeedDisk.Location = new System.Drawing.Point(2, 89);
-            this.lblReadSpeedDisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblReadSpeedDisk.Name = "lblReadSpeedDisk";
-            this.lblReadSpeedDisk.Size = new System.Drawing.Size(92, 13);
-            this.lblReadSpeedDisk.TabIndex = 6;
-            this.lblReadSpeedDisk.Text = "Lasīšanas ātrums:";
+            this.columnWindowsTitle.HeaderText = "Windows virsraksts";
+            this.columnWindowsTitle.Name = "columnWindowsTitle";
+            // 
+            // btnExitButton
+            // 
+            this.btnExitButton.Location = new System.Drawing.Point(90, 500);
+            this.btnExitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExitButton.Name = "btnExitButton";
+            this.btnExitButton.Size = new System.Drawing.Size(68, 36);
+            this.btnExitButton.TabIndex = 7;
+            this.btnExitButton.Text = "Iziet";
+            this.btnExitButton.UseVisualStyleBackColor = true;
+            this.btnExitButton.Click += new System.EventHandler(this.btnExitButton_Click);
+            // 
+            // tbInfo
+            // 
+            this.tbInfo.Location = new System.Drawing.Point(559, 245);
+            this.tbInfo.Multiline = true;
+            this.tbInfo.Name = "tbInfo";
+            this.tbInfo.ReadOnly = true;
+            this.tbInfo.Size = new System.Drawing.Size(276, 248);
+            this.tbInfo.TabIndex = 8;
+            this.tbInfo.Text = resources.GetString("tbInfo.Text");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label2.Location = new System.Drawing.Point(652, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Informācija";
             // 
             // ProcessManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(847, 546);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbInfo);
+            this.Controls.Add(this.btnExitButton);
             this.Controls.Add(this.gbHardDisk);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnViewInExcel);
             this.Controls.Add(this.gbRAM);
             this.Controls.Add(this.dgvProcesses);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "ProcessManager";
             this.Text = "Procesu pārvaldnieks";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesses)).EndInit();
@@ -397,9 +431,6 @@
         private System.Windows.Forms.Label lblTotalRAM;
         private System.Windows.Forms.Button btnViewInExcel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnWindowsTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column_CPU;
         private System.Windows.Forms.TextBox tbLoadCPU;
         private System.Windows.Forms.Label lblLoadCPU;
         private System.Windows.Forms.TextBox tbThreadsCPU;
@@ -414,6 +445,11 @@
         private System.Windows.Forms.TextBox tbReadSpeedDisk;
         private System.Windows.Forms.Label lblReadSpeedDisk;
         private System.Windows.Forms.TextBox tbWriteSpeedDisk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnWindowsTitle;
+        private System.Windows.Forms.Button btnExitButton;
+        private System.Windows.Forms.TextBox tbInfo;
+        private System.Windows.Forms.Label label2;
     }
 }
 

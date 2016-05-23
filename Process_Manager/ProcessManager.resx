@@ -117,16 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="lblWriteSpeedDisk.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="columnName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="columnWindowsTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="column_CPU.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="columnName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="lblWriteSpeedDisk.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="columnWindowsTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
+  <data name="tbInfo.Text" xml:space="preserve">
+    <value>Indikātors iekrāsojas sarkans:
+*Ir pārsniegts noteiktais - augsta līmeņa noslogojums.
+
+*Attiecīgi, ja tiek novērtos procesora (CPU) rādītājos,
+tas var norādīt to uz, ka ir pienācis laiks mainīt
+procesoru, vai arī tiek nelietderīgi izmantoti procesora
+resursi.
+
+*Līdzīga situācija attiecās arī uz RAM.
+
+*Cietais disks - līdzīgi situācija, bet tomēr ne tik nosacīta,
+jo cietajiem diskiem ir vairāki veidi - atkarībā no veida,
+piemēram, sistēmas pieprasījumu skaits var mainīties,
+tāpēc tas iekrāsojās zaļš, kad (nosacīti) pārsniedz izvirzīto
+normu.
+</value>
+  </data>
 </root>
